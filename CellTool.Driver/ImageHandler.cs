@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace CellTool.Storage.Content
+namespace CellTool.Driver
 {
     public class ImageHandler
     {
@@ -42,11 +42,44 @@ namespace CellTool.Storage.Content
                 return ms.ToArray();
             }
         }
-        string sourceDir = "C:/Users/thoma/Documents/00GitHub/00_LOCAL_ONLY/Symmetric_Rbc_Crop/";
 
-        string[] fileEntries = Directory.GetFiles(sourceDir);
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
 
-        byte[] bytes = System.IO.File.ReadAllBytes(filename);
+        public void BulkImportImages()
+        {
+            string sourceDir = "C:/Users/thoma/Documents/00GitHub/00_LOCAL_ONLY/Symmetric_Rbc_Crop/";
+
+            string[] fileEntries = Directory.GetFiles(sourceDir);
+
+            Console.WriteLine(sourceDir);
+            foreach (string line in fileEntries)
+            {
+                Console.WriteLine(line);
+            }
+
+
+            //for i in fileEntries;
+            //    Image im = open(i);
+            //    byte[] imByte = imageToByteArray(img);
+            //    SqlBulkImport(imByte);
+
+        }
+
+        //public void BulkImportImageData()
+        //{
+        //    string sourceDir = "C:/Users/thoma/Documents/00GitHub/00_LOCAL_ONLY/Symmetric_Rbc_Crop/";
+
+        //    for i in sourceDir;
+        //        Image im = open(i);
+        //    byte[] imByte = imageToByteArray(img);
+        //    SqlBulkImport(imByte);
+
+        //}
 
     }
 }

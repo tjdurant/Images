@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CellTool.Driver
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            ImageHandler ih = new ImageHandler();
+            ih.BulkImportImages();
+
         }
     }
 }
