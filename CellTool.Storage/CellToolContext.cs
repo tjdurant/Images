@@ -26,6 +26,7 @@ namespace CellTool.Storage
     {
         protected override void Seed(CellToolContext context)
         {
+
             context.SaveChanges();
         }
     }
