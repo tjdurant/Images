@@ -52,7 +52,6 @@ namespace CellTool.Driver
 
         public void BulkImportImages()
         {
-
             string sourceDir = "C:/Users/thoma/Documents/00GitHub/00_LOCAL_ONLY/Symmetric_Rbc_Crop/";
 
             string[] fileEntries = Directory.GetFiles(sourceDir);
@@ -60,12 +59,7 @@ namespace CellTool.Driver
             Console.WriteLine(sourceDir);
             foreach (string line in fileEntries)
             {
-                //Console.WriteLine(line);
-                byte[] arr;
-                Image img = Image.FromFile(line);
-                arr = imageToByteArray(img);
-
-                SqlBulkImport(arr);
+                Console.WriteLine(line);
             }
 
 
