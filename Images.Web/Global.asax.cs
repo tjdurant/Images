@@ -14,6 +14,7 @@ namespace Images.Web
     {
         protected void Application_Start()
         {
+            // Put this in Startup; and wrote it a little differently, and it worked. Don't know why
             Database.SetInitializer<CellToolContext>(new CellToolInitializer());
 
             AreaRegistration.RegisterAllAreas();

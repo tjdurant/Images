@@ -22,22 +22,10 @@ namespace CellTool.Storage
     }
 
 
-    public class CellToolInitializer : DropCreateDatabaseIfModelChanges<CellToolContext>
+    public class CellToolInitializer : DropCreateDatabaseAlways<CellToolContext>
     {
         protected override void Seed(CellToolContext context)
         {
-
-            context.CellData.Add(new CellData { Annotator = "Tommy" });
-            context.CellData.Add(new CellData { Annotator = "Eben" });
-            context.CellData.Add(new CellData { Annotator = "Rick" });
-
-            context.CellData.Add(new CellData { Label = "Normal" });
-            context.CellData.Add(new CellData { Label = "Abnormal" });
-            context.CellData.Add(new CellData { Label = "Skip" });
-
-            context.CellData.Add(new CellData { CellType = "Erythrocyte" });
-            context.CellData.Add(new CellData { CellType = "Leukocyte" });
-
             context.SaveChanges();
         }
     }
