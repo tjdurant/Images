@@ -1,0 +1,10 @@
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\Images.Storage.dll.config
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\Images.Storage.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\Images.Storage.pdb
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\EntityFramework.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\EntityFramework.xml
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\obj\Debug\Images.Storage.csprojResolveAssemblyReference.cache
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\obj\Debug\Images.Storage.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Storage\obj\Debug\Images.Storage.pdb

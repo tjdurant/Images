@@ -1,0 +1,10 @@
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\obj\Debug\CellTool.Storage.csprojResolveAssemblyReference.cache
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\CellTool.Storage.dll.config
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\CellTool.Storage.dll
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\CellTool.Storage.pdb
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\EntityFramework.dll
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\EntityFramework.xml
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\obj\Debug\CellTool.Storage.dll
+C:\Users\thoma\Documents\00GitHub\Images\CellTool.Storage\obj\Debug\CellTool.Storage.pdb
