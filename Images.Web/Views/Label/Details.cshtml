@@ -1,0 +1,82 @@
+﻿@model CellTool.Storage.Models.CellData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CellData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageBin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageBin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Annotator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Annotator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Label)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Label)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.X)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.X)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Y)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Y)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.W)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.W)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿@model CellTool.Storage.Models.CellData
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CellData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageBin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageBin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Annotator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Annotator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CellType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Label)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Label)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.X)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.X)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Y)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Y)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.W)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.W)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
