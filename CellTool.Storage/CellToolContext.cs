@@ -22,7 +22,7 @@ namespace CellTool.Storage
     }
 
 
-    public class CellToolInitializer : DropCreateDatabaseIfModelChanges<CellToolContext>
+    public class CellToolInitializer : DropCreateDatabaseAlways<CellToolContext>
     {
         protected override void Seed(CellToolContext context)
         {
