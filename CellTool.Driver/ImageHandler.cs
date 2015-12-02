@@ -59,7 +59,12 @@ namespace CellTool.Driver
             Console.WriteLine(sourceDir);
             foreach (string line in fileEntries)
             {
-                Console.WriteLine(line);
+                //Console.WriteLine(line);
+                byte[] arr;
+                Image img = Image.FromFile(line);
+                arr = imageToByteArray(img);
+
+                SqlBulkImport(arr);
             }
 
 
