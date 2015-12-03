@@ -15,7 +15,11 @@ namespace Images.Web
         protected void Application_Start()
         {
             // Put this in Startup; and wrote it a little differently, and it worked. Don't know why
-            Database.SetInitializer<CellToolContext>(new CellToolInitializer());
+            /* 
+            SetInitialize will create database and table for you if it isn't already there, 
+            unless you pass (null)
+            */
+            Database.SetInitializer<CellToolContext>(null);
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
