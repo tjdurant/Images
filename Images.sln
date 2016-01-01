@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images.Web", "Images.Web\Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellTool.Storage", "CellTool.Storage\CellTool.Storage.csproj", "{4F015F64-76A3-4499-BB37-A1282D6DA186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellTool.Driver", "CellTool.Driver\CellTool.Driver.csproj", "{04865073-7A38-40B1-A294-EC6CD43AA556}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PutDataDriver", "CellTool.Driver\PutDataDriver.csproj", "{04865073-7A38-40B1-A294-EC6CD43AA556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,18 +11,34 @@ namespace CellTool.Storage.Models
     // could use this for image and associated data. 
     // This is our model for the CellData DB; also called an 'Entity'
     // [Table("CellDatas")]
-    public class CellData
+
+    // Match this with model name
+    public class CreateCellGroup
     {
         // fields 
-        public long Id { get; set; }
-        public byte[] ImageBin { get; set; }
-        public string Annotator { get; set; }
+        public long GroupId { get; set; }
+        public string GroupName { get; set; }
+        public long CellId { get; set; }
         public string CellType { get; set; }
-        public string Label { get; set; }
+
+        public byte[] ImageBin { get; set; }
+
         public int X { get; set; }
         public int Y { get; set; }
         public int W { get; set; }
         public int H { get; set; }
 
     }
+
+
+    public class UpdateCellData
+    {
+        public long CellId { get; set; }
+        public long GroupId { get; set; }
+        public string GroupName { get; set; }
+
+        public string Annotator { get; set; }
+        public string Label { get; set; }
+    }
+
 }

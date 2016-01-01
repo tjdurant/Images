@@ -17,11 +17,12 @@ namespace CellTool.Storage
         /* 
         On the Context we define a property that is a DbSet for every type in our model
         DbSet allows us to query and set instances of those types in our model     
-        */    
+        */
         // I think DbSet pluralizes your table to represent data plural 
         // DbSet connects to database. <> is the entity  
         // The public CellData property is returning a DbSet of <CellData>
-        public DbSet<CellData> CellData { get; set; }
+        public DbSet<CreateCellGroup> OriginalCellData { get; set; }
+        public DbSet<UpdateCellData> UpdatedCellData { get; set; }
         
         // If DbSet is going to make a connection it needs to know where to make
         // That connection; and connection strings go in the Web.Config file
@@ -34,7 +35,6 @@ namespace CellTool.Storage
     {
         protected override void Seed(CellToolContext context)
         {
-
             context.SaveChanges();
         }
     }

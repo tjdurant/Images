@@ -5,8 +5,11 @@ using System.Web;
 
 namespace Images.Web.Models
 {
-    public class CellDataModels
+    public class CellLabelModel
     {
-
+        // 
+        public string CellImage { get; set; }
+        public long Id { get; set; }
+        public string Label { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CellTool.Storage;
 using CellTool.Storage.Models;
+using Images.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,17 +21,46 @@ namespace Images.Web.Controllers
         SqlConnection con;
         SqlDataAdapter da;
 
-        public ActionResult Index(int id)
+        private CellToolContext _db;
+
+        public void VariantController()
         {
-            CellToolContext db = new CellToolContext();
+            _db = new CellToolContext();
+
+        }
+
+
+        
+
+        public ActionResult Index(CellLabelModel model)
+        {
+            // 
+            long id = 0;
+
+            // if model not specified, use 0 
+            if (model != null)
+                id = model.Id;
+
+            var imgRecord = _db.CellData.Where(r => r.Id>id).OrderBy(r => r.Id).FirstOrDefault();
+
+            var vm = new CellLabelModel();
+            vm.Id = imgRecord.Id;
+            // put base64 in here
+
+
+            // convert byte[] to image to base64 (include image data in image tag)
+            
+            return View(vm);
+            
+            //CellToolContext db = new CellToolContext();
 
             // CellData cellImage = db.CellData.OrderBy(im => im.Id);
-            var sorted = db.CellData.OrderBy(i => i.ImageBin);
-            var top100 = sorted.Take(100);
+            //var sorted = db.CellData.OrderBy(i => i.ImageBin);
+            //var top100 = sorted.Take(100);
 
-            ViewBag.Message = "Cell Label Page.";
+            //ViewBag.Message = "Cell Label Page.";
 
-            return View(top100);
+            //return View(imageTest);
         }
 
         public ActionResult GetCellData()
