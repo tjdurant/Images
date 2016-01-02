@@ -20,22 +20,18 @@ namespace CellTool.Driver
             using (var db = new CellToolContext())
             {
                 // Create and save a new Blog 
-                Console.Write("Enter a name for a new Blog: ");
+                Console.Write("Enter a name for a new Cell Group Name: ");
                 var name = Console.ReadLine();
 
-                var blog = new CreateCellGroup { Name = name };
-                db.Blogs.Add(blog);
-                db.SaveChanges();
-
                 // Display all Blogs from the database 
-                var query = from b in db.Blogs
-                            orderby b.Name
+                var query = from b in db.OriginalCellData
+                            orderby b.GroupName
                             select b;
 
                 Console.WriteLine("All blogs in the database:");
                 foreach (var item in query)
                 {
-                    Console.WriteLine(item.Name);
+                    Console.WriteLine(item.GroupName);
                 }
 
                 Console.WriteLine("Press any key to exit...");
@@ -110,12 +106,6 @@ namespace CellTool.Driver
 
             //}
 
-            cmd = new SqlCommand("INSERT INTO CellDatas (ImageBin) VALUES (@ImageBin)", con);
-
-            cmd.Parameters.AddWithValue("@ImageBin", ImgArray);
-
-            con.Open();
-            cmd.ExecuteNonQuery();
 
         }
     }
