@@ -19,6 +19,31 @@ namespace CellTool.Driver
         {
             using (var db = new CellToolContext())
             {
+                ImageHandler ih = new ImageHandler();
+
+                Console.Write("Enter path for new Cell Group: ");
+                var imagePath = Console.ReadLine();
+
+                string[] fileEntries = Directory.GetFiles(imagePath);
+                
+
+                foreach (string line in fileEntries)
+                {
+                    //console.writeline(line);
+                    Image img = Image.FromFile(line);
+
+
+                    // .net obj for record in db
+                    var cur = new CreateCellGroup();
+                    var ImgBin = cur.ImageBin;
+
+                    // adding data to object
+                    ImgBin = ih.imageToByteArray(img)
+
+                    // mapping to ef model and adding to virtual table 
+                    db.OriginalCellData.Add(ImgBin);
+                    db.SaveChanges();
+                }
                 // Create and save a new Blog 
                 Console.Write("Enter a name for a new Cell Group Name: ");
                 var name = Console.ReadLine();
@@ -73,36 +98,7 @@ namespace CellTool.Driver
 
             //    sqlbulkimport(arr);
 
-            //    using (var db = new celltoolcontext())
-            //    {
-
-            //        string sourcedir = "c:/users/thoma/documents/00github/00_local_only/symmetric_rbc_crop/";
-
-            //        string[] fileentries = directory.getfiles(sourcedir);
-
-            //        console.writeline(sourcedir);
-            //        foreach (string line in fileentries)
-            //        {
-            //            //console.writeline(line);
-
-
-            //            image img = image.fromfile(line);
-
-            //            // .net obj for record in db
-            //            var cur = new celldata();
-
-            //            // adding data to object
-            //            cur.imagebin = imagetobytearray(img);
-
-            //            // mapping to ef model and adding to virtual table 
-            //            db.celldata.add(cur);
-
-            //            // commits change to database 
-            //            db.savechanges();
-
-            //        }
-
-            //    }
+           
 
             //}
 
