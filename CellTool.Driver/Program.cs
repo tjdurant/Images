@@ -17,8 +17,11 @@ namespace CellTool.Driver
     {
         static void Main(string[] args)
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<CellToolContext>());
+
             using (var db = new CellToolContext())
             {
+
                 ImageHandler ih = new ImageHandler();
 
                 Console.Write("Enter path for new Cell Group: ");
