@@ -14,7 +14,7 @@ namespace CellTool.Storage.Models
     // [Table("CellDatas")]
 
     // Match this with model name
-    public class CreateCellGroup
+    public class CellGroup
     {
         // fields 
         [Key]
@@ -24,6 +24,7 @@ namespace CellTool.Storage.Models
         public string GroupName { get; set; }
 
         public byte[] ImageBin { get; set; }
+
 
         public virtual List<CellLabel> CellLabels { get; set; }
 
@@ -40,7 +41,7 @@ namespace CellTool.Storage.Models
 
         //  the following class definitions would result in a CreateCellGroup_GroupId parameter 
         // being expected in the stored procedures to insert and update UpdateCellData.
-        public virtual CreateCellGroup CreateCellGroup { get; set; }
+        public virtual CellGroup CreateCellGroup { get; set; }
     }
 
 }

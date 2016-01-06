@@ -28,7 +28,7 @@ namespace CellTool.Storage
         // I think DbSet pluralizes your table to represent data plural 
         // DbSet connects to database. <> is the entity  
         // The public CellData property is returning a DbSet of <CellData>
-        public DbSet<CreateCellGroup> OriginalCellData { get; set; }
+        public DbSet<CellGroup> OriginalCellData { get; set; }
         public DbSet<CellLabel> CellLabels { get; set; }
         
         // If DbSet is going to make a connection it needs to know where to make

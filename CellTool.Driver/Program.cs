@@ -17,7 +17,7 @@ namespace CellTool.Driver
     {
         static void Main(string[] args)
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<CellToolContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<CellToolContext>());
 
             using (var db = new CellToolContext())
             {
@@ -40,14 +40,14 @@ namespace CellTool.Driver
 
 
                     // .net obj for record in db
-                    var cur = new CreateCellGroup();
+                    var cur = new CellGroup();
                     var ImgBin = cur.ImageBin;
 
                     // adding data to object
                     ImgBin = ih.imageToByteArray(img);
 
 
-                    var a = new CreateCellGroup
+                    var a = new CellGroup
                     {
                         CellType = cellType,
                         GroupName = groupName,
