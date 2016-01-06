@@ -12,6 +12,13 @@ namespace CellTool.Storage
     DbContext; The context represents a session with the DB which allows us to query and 
     save data. This is the class to use if you want to hit the DB. 
     */
+    public class CellToolInitializer : DropCreateDatabaseIfModelChanges<CellToolContext>
+    {
+        protected override void Seed(CellToolContext context)
+        {
+            context.SaveChanges();
+        }
+    }
     public class CellToolContext : DbContext
     {
         /* 
@@ -22,7 +29,7 @@ namespace CellTool.Storage
         // DbSet connects to database. <> is the entity  
         // The public CellData property is returning a DbSet of <CellData>
         public DbSet<CreateCellGroup> OriginalCellData { get; set; }
-        public DbSet<UpdateCellData> UpdatedCellData { get; set; }
+        public DbSet<CellLabel> CellLabels { get; set; }
         
         // If DbSet is going to make a connection it needs to know where to make
         // That connection; and connection strings go in the Web.Config file
@@ -31,11 +38,5 @@ namespace CellTool.Storage
     }
 
 
-    public class CellToolInitializer : DropCreateDatabaseIfModelChanges<CellToolContext>
-    {
-        protected override void Seed(CellToolContext context)
-        {
-            context.SaveChanges();
-        }
-    }
+
 }

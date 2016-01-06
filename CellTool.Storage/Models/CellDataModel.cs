@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -16,29 +17,30 @@ namespace CellTool.Storage.Models
     public class CreateCellGroup
     {
         // fields 
-        public long GroupId { get; set; }
-        public string GroupName { get; set; }
-        public long CellId { get; set; }
+        [Key]
+        public int CreateCellGroupsId { get; set; }
+
         public string CellType { get; set; }
+        public string GroupName { get; set; }
 
         public byte[] ImageBin { get; set; }
 
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int W { get; set; }
-        public int H { get; set; }
+        public virtual List<CellLabel> CellLabels { get; set; }
+
 
     }
 
 
-    public class UpdateCellData
+    public class CellLabel
     {
-        public long CellId { get; set; }
-        public long GroupId { get; set; }
-        public string GroupName { get; set; }
-
-        public string Annotator { get; set; }
+        [Key]
+        public int CellLabelsId { get; set; }
         public string Label { get; set; }
+        public string Annotator { get; set; }
+
+        //  the following class definitions would result in a CreateCellGroup_GroupId parameter 
+        // being expected in the stored procedures to insert and update UpdateCellData.
+        public virtual CreateCellGroup CreateCellGroup { get; set; }
     }
 
 }

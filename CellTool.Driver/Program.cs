@@ -23,9 +23,12 @@ namespace CellTool.Driver
 
                 Console.Write("Enter path for new Cell Group: ");
                 var imagePath = Console.ReadLine();
+                Console.Write("Enter Cell Type(rbc or wbc): ");
+                var cellType = Console.ReadLine();
+                Console.Write("Enter Cell group name: ");
+                var groupName = Console.ReadLine();
 
                 string[] fileEntries = Directory.GetFiles(imagePath);
-                
 
                 foreach (string line in fileEntries)
                 {
@@ -38,29 +41,20 @@ namespace CellTool.Driver
                     var ImgBin = cur.ImageBin;
 
                     // adding data to object
-                    ImgBin = ih.imageToByteArray(img)
+                    ImgBin = ih.imageToByteArray(img);
+
+
+                    var a = new CreateCellGroup
+                    {
+                        CellType = cellType,
+                        GroupName = groupName,
+                        ImageBin = ImgBin
+                    };
 
                     // mapping to ef model and adding to virtual table 
-                    db.OriginalCellData.Add(ImgBin);
+                    db.OriginalCellData.Add(a);
                     db.SaveChanges();
                 }
-                // Create and save a new Blog 
-                Console.Write("Enter a name for a new Cell Group Name: ");
-                var name = Console.ReadLine();
-
-                // Display all Blogs from the database 
-                var query = from b in db.OriginalCellData
-                            orderby b.GroupName
-                            select b;
-
-                Console.WriteLine("All blogs in the database:");
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item.GroupName);
-                }
-
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey();
             }
             /*
             In this article I will explain with an example, how to perform select, insert, edit, update, 
