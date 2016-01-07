@@ -67,10 +67,10 @@ namespace Images.Web
             //    ClientSecret = ""
             //});
 
-            using (var context = new CellToolContext())
-            {
-                context.Database.Initialize(false);
-            }
+            //using (var context = new CellToolContext())
+            //{
+            //    context.Database.Initialize(false);
+            //}
         }
     }
 }

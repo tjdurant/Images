@@ -254,6 +254,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CellTool.Driver\PutDataDriver.csproj">
+      <Project>{04865073-7a38-40b1-a294-ec6cd43aa556}</Project>
+      <Name>PutDataDriver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CellTool.Storage\CellTool.Storage.csproj">
       <Project>{4f015f64-76a3-4499-bb37-a1282d6da186}</Project>
       <Name>CellTool.Storage</Name>

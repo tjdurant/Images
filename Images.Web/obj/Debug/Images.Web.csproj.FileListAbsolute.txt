@@ -69,3 +69,5 @@ C:\Users\thoma\Documents\00GitHub\Images\Images.Web\obj\Debug\Images.Web.dll
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\obj\Debug\Images.Web.pdb
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Storage.dll
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Storage.pdb
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Driver.exe
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Driver.pdb

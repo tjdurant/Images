@@ -19,7 +19,7 @@ namespace Images.Web
             SetInitialize will create database and table for you if it isn't already there, 
             unless you pass (null)
             */
-            Database.SetInitializer<CellToolContext>(null);
+            //Database.SetInitializer<CellToolContext>(null);
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
