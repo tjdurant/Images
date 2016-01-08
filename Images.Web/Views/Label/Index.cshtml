@@ -4,6 +4,41 @@
 
 }
 
-<h2>Index</h2>
+<h2>This is where the cell groups go</h2>
 
-<img src="@ViewBag.ImageData" />
+<div class="row">
+        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />     
+</div>
+<div class="row">
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+</div>
+<div class="row">
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+</div>
+
+
+<form id="form1">
+    <input id="btnAnimate" type="button" value="Animate" />
+    <asp:Panel ID="Panel1">
+        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
+    </asp:Panel>
+</form>
+
+<script type="text/javascript">
+     $(document).ready(function() {
+         $("#buttonSubmit").click(function() {
+             $("#Panel1").animate(
+            {
+                width: "350px",
+                opacity: 0.5,
+                fontSize: "16px"
+            }, 1800);
+         });
+     });
+</script>
