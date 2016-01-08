@@ -35,13 +35,15 @@ namespace Images.Web.Controllers
         {
             var query =
                         (from c in _db.OriginalCellData
-                        select new { c.ImageBin }).Single();
+                        select new { c.ImageBin }).First();
 
             var imArray = query.ImageBin;
 
             //var imArray = _db.OriginalCellData.First<CellGroup>(a => a.ImageBin);
-            var image = ih.byteArrayToImage(imArray);
-            return View(image);
+            string imageBase64Data = Convert.ToBase64String(imArray);
+            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+            ViewBag.ImageData = imageDataURL;
+            return View();
         }
 
         public ActionResult GetImage()
