@@ -1,10 +1,20 @@
-﻿
+﻿@section scripts{
+    @*you have to import the highcharts libraries; later you can download the libraries and just reference min.js
+    files in the content directory; ~/Content/library/plugins...etc*@
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/javascript/highcharts/linegraph.js")"></script>
+}
+
 @{
     ViewBag.Title = "Index";
 
 }
 
 <h2>This is where the cell groups go</h2>
+
+<div id="container" style="width:100%; height:400px;"></div>
+<div id="chart1" style="width:100%; height:400px;"></div>
 
 <div class="row">
         <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
@@ -41,4 +51,47 @@
             }, 1800);
          });
      });
+
+     $(function () {
+         $('#container').highcharts({
+             chart: {
+                 type: 'bar'
+             },
+             title: {
+                 text: 'Fruit Consumption'
+             },
+             xAxis: {
+                 categories: ['Apples', 'Bananas', 'Oranges']
+             },
+             yAxis: {
+                 title: {
+                     text: 'Fruit eaten'
+                 }
+             },
+             series: [{
+                 name: 'Jane',
+                 data: [1, 0, 4]
+             }, {
+                 name: 'John',
+                 data: [5, 7, 3]
+             }],
+         });
+     });
+
+     var chart1; // globally available
+     $(function () {
+         chart1 = new Highcharts.StockChart({
+             chart: {
+                 renderTo: 'container'
+             },
+             rangeSelector: {
+                 selected: 1
+             },
+             series: [{
+                 name: 'USD to EUR',
+                 data: usdtoeur // predefined JavaScript array
+             }]
+         });
+     });
 </script>
+

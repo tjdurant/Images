@@ -71,3 +71,8 @@ C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Storage.dll
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Storage.pdb
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Driver.exe
 C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\CellTool.Driver.pdb
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\Highcharts.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\Highcharts.MVC.dll
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\Highcharts.pdb
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\Highcharts.MVC.pdb
+C:\Users\thoma\Documents\00GitHub\Images\Images.Web\bin\DotNet.Highcharts.dll

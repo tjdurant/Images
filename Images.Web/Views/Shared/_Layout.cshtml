@@ -7,6 +7,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    @Scripts.Render("~/bundles/highchart")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,8 +42,27 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+    <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+    <section>
+        <!-- Library script : mandatory -->
+        <script type="text/javascript" src="@Url.Content("~/Content/library/jquery/js/jquery.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/library/jquery/js/jquery-migrate.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/library/bootstrap/js/bootstrap.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/library/core/js/core.min.js")"></script>
+        <!--/ Library script -->
+        <!-- App and page level script -->
+        <script type="text/javascript" src="@Url.Content("~/Content/plugins/highcharts/jquery.highcharts.min.js")"></script><!-- will be use globaly as a summary on sidebar menu -->
+        <script type="text/javascript" src="@Url.Content("~/Content/javascript/app.min.js")"></script>
+
+
+        <script type="text/javascript" src="@Url.Content("~/Content/plugins/selectize/js/selectize.min.js")"></script>
+
+        <!--/ App and page level script -->
+        @RenderSection("scripts", required: false)
+
+    </section>
+    <!--/ END JAVASCRIPT SECTION -->
+
 </body>
 </html>
