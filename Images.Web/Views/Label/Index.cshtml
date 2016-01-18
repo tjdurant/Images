@@ -1,97 +1,19 @@
-﻿@section scripts{
-    @*you have to import the highcharts libraries; later you can download the libraries and just reference min.js
-    files in the content directory; ~/Content/library/plugins...etc*@
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
-    <script type="text/javascript" src="@Url.Content("~/Content/javascript/highcharts/linegraph.js")"></script>
-}
+﻿@model CellTool.Storage.Models.CellGroup
 
 @{
     ViewBag.Title = "Index";
-
 }
 
-<h2>This is where the cell groups go</h2>
-
-<div id="container" style="width:100%; height:400px;"></div>
-<div id="chart1" style="width:100%; height:400px;"></div>
-
-<div class="row">
-        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />     
-</div>
-<div class="row">
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-</div>
-<div class="row">
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-    <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-</div>
 
 
-<form id="form1">
-    <input id="btnAnimate" type="button" value="Animate" />
-    <asp:Panel ID="Panel1">
-        <img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
-    </asp:Panel>
-</form>
+<fieldset>
+    <legend>Images</legend>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImagePath)
+    </div>
+</fieldset>
 
-<script type="text/javascript">
-     $(document).ready(function() {
-         $("#buttonSubmit").click(function() {
-             $("#Panel1").animate(
-            {
-                width: "350px",
-                opacity: 0.5,
-                fontSize: "16px"
-            }, 1800);
-         });
-     });
+<h2>Index</h2>
 
-     $(function () {
-         $('#container').highcharts({
-             chart: {
-                 type: 'bar'
-             },
-             title: {
-                 text: 'Fruit Consumption'
-             },
-             xAxis: {
-                 categories: ['Apples', 'Bananas', 'Oranges']
-             },
-             yAxis: {
-                 title: {
-                     text: 'Fruit eaten'
-                 }
-             },
-             series: [{
-                 name: 'Jane',
-                 data: [1, 0, 4]
-             }, {
-                 name: 'John',
-                 data: [5, 7, 3]
-             }],
-         });
-     });
-
-     var chart1; // globally available
-     $(function () {
-         chart1 = new Highcharts.StockChart({
-             chart: {
-                 renderTo: 'container'
-             },
-             rangeSelector: {
-                 selected: 1
-             },
-             series: [{
-                 name: 'USD to EUR',
-                 data: usdtoeur // predefined JavaScript array
-             }]
-         });
-     });
-</script>
+<img width="150" height="150" style="padding:4px" src="@ViewBag.ImageData" />
 
