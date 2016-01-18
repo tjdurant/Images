@@ -24,6 +24,7 @@ namespace CellTool.Driver
 
                 ImageHandler ih = new ImageHandler();
 
+                // C:\Users\thoma\Documents\00GitHub\00_LOCAL_ONLY\
                 Console.Write("Enter path for new Cell Group: ");
                 var imagePath = Console.ReadLine();
                 Console.Write("Enter Cell Type(rbc or wbc): ");
@@ -35,29 +36,18 @@ namespace CellTool.Driver
 
                 foreach (string line in fileEntries)
                 {
-                    //console.writeline(line);
-                    Image img = Image.FromFile(line);
-
-
-                    // .net obj for record in db
-                    var cur = new CellGroup();
-                    var ImgBin = cur.ImageBin;
-
-                    // adding data to object
-                    ImgBin = ih.imageToByteArray(img);
-
-
-                    var a = new CellGroup
+                    var cur = new CellGroup
                     {
                         CellType = cellType,
                         GroupName = groupName,
-                        ImageBin = ImgBin
+                        ImagePath = line
                     };
 
                     // mapping to ef model and adding to virtual table 
-                    db.OriginalCellData.Add(a);
+                    db.OriginalCellData.Add(cur);
                     db.SaveChanges();
                 }
+
             }
             /*
             In this article I will explain with an example, how to perform select, insert, edit, update, 

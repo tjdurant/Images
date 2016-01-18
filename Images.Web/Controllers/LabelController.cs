@@ -35,7 +35,7 @@ namespace Images.Web.Controllers
         {
             var query =
                         (from c in _db.OriginalCellData
-                        select new { c.ImageBin }).First();
+                        select new { c.ImagePath }).First();
 
             var imArray = query.ImageBin;
 

@@ -17,25 +17,21 @@ namespace CellTool.Storage.Models
     public class CellGroup
     {
         // fields 
-        [Key]
-        public int CreateCellGroupsId { get; set; }
-
+        public int Id { get; set; }
+        
         public string CellType { get; set; }
         public string GroupName { get; set; }
 
-        public byte[] ImageBin { get; set; }
-
+        public string ImagePath { get; set; }
 
         public virtual List<CellLabel> CellLabels { get; set; }
-
-
     }
 
 
     public class CellLabel
     {
         [Key]
-        public int CellLabelsId { get; set; }
+        public int id { get; set; }
         public string Label { get; set; }
         public string Annotator { get; set; }
 
