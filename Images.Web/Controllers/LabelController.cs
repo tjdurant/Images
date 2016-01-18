@@ -33,16 +33,14 @@ namespace Images.Web.Controllers
 
         public ActionResult Index()
         {
-            var query =
-                        (from c in _db.OriginalCellData
-                        select new { c.ImagePath }).First();
+            var query = (from c in _db.OriginalCellData select new { c.ImagePath }).First();
 
-            var imArray = query.ImageBin;
+            var imPath = query.ImagePath;
 
             //var imArray = _db.OriginalCellData.First<CellGroup>(a => a.ImageBin);
-            string imageBase64Data = Convert.ToBase64String(imArray);
-            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
-            ViewBag.ImageData = imageDataURL;
+            //string imageBase64Data = Convert.ToBase64String(imPath);
+            //string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+            ViewBag.ImageData = imPath;
             return View();
         }
 
